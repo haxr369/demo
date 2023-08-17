@@ -15,7 +15,7 @@ COPY src/main/java src/main/java
 COPY src/main/resources src/main/resources
 
 # 실행 가능한 jar파일  이미지에 생성
-RUN gradlew build
+RUN gradle build -x test
 
 # jar 파일 위치 지정
 COPY ./build/libs/*.jar ./app.jar
