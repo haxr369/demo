@@ -1,0 +1,20 @@
+name : Deploy
+on :
+  push:
+    branches:
+      - main
+
+jobs :
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: branch checkout
+      - uses: actions/checkout@v2
+      - name: Set up Java
+      - uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+      - name: Grant execute permission for gradle
+        run: chmod +x gradlew
+      - name: Build with Gradle
+        run: ./gradlew build
