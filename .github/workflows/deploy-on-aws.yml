@@ -29,9 +29,7 @@ jobs :
             IMAGE_TAG: 1
         run: |
           # Build a docker container and push it to ECR 
-          docker-compose build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker-compose build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ./docker-compose.yml
           echo "Pushing image to ECR..."
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output
-      - name: Copy to S3
-        run : aws s3 cp --region ap-northeast-2 --acl private ./springboot-with-githubaction.zip s3://solsol-springboot-s3/
