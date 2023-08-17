@@ -14,6 +14,8 @@ COPY gradle gradle
 COPY src/main/java src/main/java
 COPY src/main/resources src/main/resources
 
+# Jar 파일 생성 확인
+RUN ls -al ./build/libs/
 # 실행 가능한 jar파일  이미지에 생성
 RUN gradle build -x test
 
