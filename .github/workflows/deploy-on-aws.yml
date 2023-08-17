@@ -1,4 +1,4 @@
-name : Deploy
+name : Deploy Image to AWS
 on :
   push:
     branches:
