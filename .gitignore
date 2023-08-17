@@ -16,7 +16,7 @@ build/
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
-
+.github/workflows/workflow.yml
 ### IntelliJ IDEA ###
 .idea
 *.iws
